@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Paper } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { products } from '../data/products';
-import { PINK1, BROWN1, WHITE} from '../data/colors';
+import { PINK1, BROWN1 } from '../data/colors';
 
 export const ProductView: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -13,7 +13,7 @@ export const ProductView: React.FC = () => {
 
   return (
     <Container maxWidth="md" sx={{ marginTop: '20px' }}>
-      <Paper elevation={3} sx={{ padding: '20px', backgroundColor: WHITE, borderRadius: '8px' }}>
+      <Paper elevation={3} sx={{ padding: '20px', backgroundColor: BROWN1, borderRadius: '8px' }}>
         <Typography variant="h4" component="h1" gutterBottom>
           {product.name}
         </Typography>
@@ -61,6 +61,9 @@ export const ProductView: React.FC = () => {
         </Typography>
         <Typography variant="h6" gutterBottom>
           Price: ${product.price}
+        </Typography>
+        <Typography variant="h6" gutterBottom>
+          Care level: {product.difficulty}
         </Typography>
       </Paper>
     </Container>

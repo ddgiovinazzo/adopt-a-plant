@@ -21,6 +21,7 @@ export const products = [
     price: 45.0,
     image: figgy,
     nickname: 'figgy',
+    difficulty: 'moderate',
   },
   {
     id: '2',
@@ -31,6 +32,7 @@ export const products = [
     price: 25.0,
     image: sneaky,
     nickname: 'sneaky',
+    difficulty: 'easy',
   },
   {
     id: '3',
@@ -41,6 +43,7 @@ export const products = [
     price: 55.0,
     image: monsta,
     nickname: 'monsta',
+    difficulty: 'average',
   },
   {
     id: '4',
@@ -51,6 +54,7 @@ export const products = [
     price: 20.0,
     image: pothos,
     nickname: 'pothos',
+    difficulty: 'easy',
   },
   {
     id: '5',
@@ -62,6 +66,7 @@ export const products = [
     image: mcthorny,
     adopted: true,
     nickname: 'mcthorny',
+    difficulty: 'easy',
   },
   {
     id: '6',
@@ -72,6 +77,7 @@ export const products = [
     price: 35.0,
     image: fernie,
     nickname: 'fernie',
+    difficulty: 'moderate',
   },
   {
     id: '7',
@@ -82,6 +88,7 @@ export const products = [
     price: 40.0,
     image: boo,
     nickname: 'boo',
+    difficulty: 'average',
   },
   {
     id: '8',
@@ -92,6 +99,7 @@ export const products = [
     price: 15.0,
     image: vera,
     nickname: 'vera',
+    difficulty: 'easy',
   },
   {
     id: '9',
@@ -103,6 +111,7 @@ export const products = [
     image: lila,
     adopted: true,
     nickname: 'lila',
+    difficulty: 'moderate',
   },
   {
     id: '10',
@@ -114,6 +123,7 @@ export const products = [
     image: spidey,
     adopted: true,
     nickname: 'spidey',
+    difficulty: 'easy',
   },
   {
     id: '11',
@@ -125,6 +135,7 @@ export const products = [
     image: sally,
     comingSoon: true,
     nickname: 'sally',
+    difficulty: 'easy',
   },
   {
     id: '12',
@@ -136,5 +147,6 @@ export const products = [
     image: ophelia,
     comingSoon: true,
     nickname: 'ophelia',
+    difficulty: 'difficult',
   },
 ];

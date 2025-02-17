@@ -24,3 +24,8 @@ export const PINK2 = '#FF69B4'; // Cute pink
 export const GREY1 = '#D3D3D3'; // Soft grey
 
 export const MINT1 = '#F0FFF0'; // Extremely light mint color
+
+export const DIFFICULTY_EASY = '#4CAF50'; // Green for easy
+export const DIFFICULTY_MODERATE = '#FF9800'; // Orange for moderate
+export const DIFFICULTY_AVERAGE = '#FFC107'; // Amber for average
+export const DIFFICULTY_DIFFICULT = '#F44336'; // Red for difficult

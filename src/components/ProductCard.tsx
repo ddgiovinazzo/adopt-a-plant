@@ -13,6 +13,11 @@ import {
   WHITE,
   PINK1,
   BROWN3,
+  DIFFICULTY_EASY,
+  DIFFICULTY_MODERATE,
+  DIFFICULTY_AVERAGE,
+  DIFFICULTY_DIFFICULT,
+  BROWN1,
 } from '../data/colors';
 import { Link } from 'react-router-dom';
 
@@ -27,6 +32,7 @@ type Product =
       price: number;
       comingSoon: true;
       adopted?: false;
+      difficulty: string;
     }
   | {
       id: string;
@@ -38,6 +44,7 @@ type Product =
       price: number;
       adopted: true;
       comingSoon?: false;
+      difficulty: string;
     }
   | {
       id: string;
@@ -49,15 +56,31 @@ type Product =
       price: number;
       comingSoon?: false;
       adopted?: false;
+      difficulty: string;
     };
 
 interface ProductCardProps {
   product: Product;
 }
 
+const getDifficultyColor = (difficulty: string) => {
+  switch (difficulty.toLowerCase()) {
+    case 'easy':
+      return DIFFICULTY_EASY;
+    case 'moderate':
+      return DIFFICULTY_MODERATE;
+    case 'average':
+      return DIFFICULTY_AVERAGE;
+    case 'difficult':
+      return DIFFICULTY_DIFFICULT;
+    default:
+      return BROWN4;
+  }
+};
+
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Card sx={{ position: 'relative', height: '370px', display: 'flex', flexDirection: 'column' }}>
+    <Card sx={{ position: 'relative', height: '370px', display: 'flex', flexDirection: 'column', backgroundColor: BROWN1 }}>
       <CardMedia
         component="img"
         image={product.image}
@@ -146,6 +169,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </Button>
         </Box>
       </CardContent>
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '10px',
+          right: '10px',
+          backgroundColor: getDifficultyColor(product.difficulty),
+          color: WHITE,
+          padding: '5px 10px',
+          borderRadius: '4px',
+          fontWeight: 'bold',
+        }}
+      >
+        {product.difficulty.toUpperCase()}
+      </Box>
     </Card>
   );
 };
