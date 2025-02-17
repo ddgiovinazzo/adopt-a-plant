@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Container, CssBaseline, Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Grid from '@mui/material/Grid'; // Import Grid from MUI
+import Grid from '@mui/material/Grid2';
 import logo from './assets/logo.svg';
 import ProductCard from './components/ProductCard';
 import products from './data/products';
