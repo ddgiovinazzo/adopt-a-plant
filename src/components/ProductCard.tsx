@@ -21,6 +21,13 @@ import {
 } from '../data/colors';
 import { Link } from 'react-router-dom';
 
+export enum Difficulty {
+  Easy = 'easy',
+  Moderate = 'moderate',
+  Average = 'average',
+  Difficult = 'difficult',
+}
+
 type Product =
   | {
       id: string;
@@ -32,7 +39,7 @@ type Product =
       price: number;
       comingSoon: true;
       adopted?: false;
-      difficulty: string;
+      difficulty: Difficulty;
     }
   | {
       id: string;
@@ -44,7 +51,7 @@ type Product =
       price: number;
       adopted: true;
       comingSoon?: false;
-      difficulty: string;
+      difficulty: Difficulty;
     }
   | {
       id: string;
@@ -56,7 +63,7 @@ type Product =
       price: number;
       comingSoon?: false;
       adopted?: false;
-      difficulty: string;
+      difficulty: Difficulty;
     };
 
 interface ProductCardProps {
