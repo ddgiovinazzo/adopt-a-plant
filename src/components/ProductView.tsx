@@ -38,8 +38,8 @@ export const ProductView: React.FC = () => {
             src={product.image}
             alt={product.name}
             sx={{
-              width: '400px',
-              height: '400px',
+              maxHeight: '400px',
+              width: 'auto',
               padding: '10px',
             }}
           />
