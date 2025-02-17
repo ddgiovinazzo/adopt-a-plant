@@ -19,8 +19,10 @@ export const ProductView: React.FC = () => {
         </Typography>
         <Box
           sx={{
-            width: '420px',
-            height: '420px',
+            maxHeight: '400px',
+            maxWidth: '400px',
+            minWidth: '200px',
+            minHeight: '200px',
             borderRadius: '50%',
             border: `5px dashed ${lightPink}`, // Cute dashed pink border
             padding: '20px',
@@ -38,8 +40,7 @@ export const ProductView: React.FC = () => {
             src={product.image}
             alt={product.name}
             sx={{
-              maxHeight: '400px',
-              width: 'auto',
+              width: '100%',
               padding: '10px',
             }}
           />
