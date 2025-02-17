@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Container, CssBaseline, Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Grid from '@mui/material/Grid2';
+import Grid2 from '@mui/material/Grid2'; // Updated import
 import logo from './assets/logo.svg';
 import ProductCard from './components/ProductCard';
 import products from './data/products';
@@ -59,13 +59,13 @@ function App() {
               Beyond aesthetics, plants can improve air quality and boost your mood, making them a great addition to any home. Taking the time to nurture your plant can also be a meditative practice, helping to reduce stress and connect you with the natural world.
             </Typography>
           </Box>
-          <Grid container spacing={4}>
+          <Grid2 container spacing={4}>
             {products.map((product, index) => (
-              <Grid item key={index} xs={12} sm={6} md={4}>
+              <Grid2 key={index} size={{ xs: 12, sm: 6, md: 4 }}> {/* Updated size prop */}
                 <ProductCard product={product} />
-              </Grid>
+              </Grid2>
             ))}
-          </Grid>
+          </Grid2>
         </main>
       </Container>
       <footer style={{ marginTop: 'auto', padding: '10px 0', textAlign: 'center' }}>
