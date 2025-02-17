@@ -5,14 +5,15 @@ import {
   CssBaseline,
   Toolbar,
   Typography,
-  Grid,
+  Paper,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import logo from './assets/logo.svg';
 import { ProductCard } from './components/ProductCard';
 import { ProductView } from './components/ProductView';
-import { BROWN2, BROWN4, BROWN3, GREEN2, WHITE } from './data/colors';
+import { BROWN2, BROWN4, BROWN3, GREEN2, BROWN1 } from './data/colors';
 import { products } from './data/products';
 
 const theme = createTheme({
@@ -43,7 +44,9 @@ const App: React.FC = () => {
       <Router basename='adopt-a-plant'>
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="h6">Adopt a Plant</Typography>
+            <Typography variant="h6" component={Link} to="/" sx={{ color: 'inherit', textDecoration: 'none' }}>
+              Adopt a Plant
+            </Typography>
           </Toolbar>
         </AppBar>
         <Container>
@@ -65,10 +68,10 @@ const App: React.FC = () => {
                   <Typography variant="h4" component="h1" gutterBottom>
                     Welcome to Adopt a Plant!
                   </Typography>
-                  <Box
+                  <Paper
                     sx={{
                       padding: '20px',
-                      backgroundColor: WHITE,
+                      backgroundColor: BROWN1,
                       borderRadius: '4px',
                       marginBottom: '20px',
                       color: BROWN4,
@@ -100,10 +103,10 @@ const App: React.FC = () => {
                       meditative practice, helping to reduce stress and connect
                       you with the natural world.
                     </Typography>
-                  </Box>
+                  </Paper>
                   <Grid container spacing={4}>
                     {products.map((product, index) => (
-                      <Grid key={index} item xs={12} sm={6} md={4}>
+                      <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
                         <ProductCard product={product} />
                       </Grid>
                     ))}
