@@ -21,6 +21,7 @@ type Product =
       id: string;
       image: string;
       name: string;
+      nickname: string;
       title: string;
       description: string;
       price: number;
@@ -31,6 +32,7 @@ type Product =
       id: string;
       image: string;
       name: string;
+      nickname: string;
       title: string;
       description: string;
       price: number;
@@ -41,6 +43,7 @@ type Product =
       id: string;
       image: string;
       name: string;
+      nickname: string;
       title: string;
       description: string;
       price: number;
@@ -119,7 +122,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 marginRight: '-20px',
               }}
             >
-              ${product.price}
+              Available!
             </Typography>
           )}
           <Button
@@ -139,7 +142,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               },
             }}
           >
-            More Info
+            Learn More
           </Button>
         </Box>
       </CardContent>

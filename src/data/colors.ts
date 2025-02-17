@@ -14,3 +14,4 @@ export const darkerBlue = '#00509E';
 export const lightBlue = '#89CFF0';
 export const softerGreen = '#A8E6A1'; // Softer green
 export const softGrey = '#D3D3D3'; // Soft grey
+export const lightMint = '#F0FFF0'; // Extremely light mint color
