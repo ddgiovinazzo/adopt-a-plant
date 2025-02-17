@@ -5,15 +5,15 @@ import {
   CssBaseline,
   Toolbar,
   Typography,
+  Grid,
 } from '@mui/material';
-import Grid2 from '@mui/material/Grid2';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import logo from './assets/logo.svg';
 import { ProductCard } from './components/ProductCard';
 import { ProductView } from './components/ProductView';
-import { beige, darkBrown, earthyBrown, softGreen } from './data/colors';
-import products from './data/products';
+import { beige, darkBrown, earthyBrown, softGreen, white } from './data/colors';
+import { products } from './data/products';
 
 const theme = createTheme({
   palette: {
@@ -40,7 +40,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename='adopt-a-plant'>
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6">Adopt a Plant</Typography>
@@ -52,10 +52,11 @@ const App: React.FC = () => {
               path="/"
               element={
                 <main>
-                  <img
+                  <Box
+                    component="img"
                     src={logo}
                     alt="logo"
-                    style={{
+                    sx={{
                       display: 'block',
                       margin: '20px auto',
                       height: '300px',
@@ -67,7 +68,7 @@ const App: React.FC = () => {
                   <Box
                     sx={{
                       padding: '20px',
-                      backgroundColor: '#fff',
+                      backgroundColor: white,
                       borderRadius: '4px',
                       marginBottom: '20px',
                       color: '#3e2723',
@@ -100,28 +101,31 @@ const App: React.FC = () => {
                       you with the natural world.
                     </Typography>
                   </Box>
-                  <Grid2 container spacing={4}>
+                  <Grid container spacing={4}>
                     {products.map((product, index) => (
-                      <Grid2 key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-                        {' '}
-                        {/* Updated size prop */}
+                      <Grid key={index} item xs={12} sm={6} md={4}>
                         <ProductCard product={product} />
-                      </Grid2>
+                      </Grid>
                     ))}
-                  </Grid2>
+                  </Grid>
                 </main>
               }
             />
             <Route path="product/:productId" element={<ProductView />} />
           </Routes>
+          <Box
+            component="footer"
+            sx={{
+              marginTop: 'auto',
+              padding: '10px 0',
+              textAlign: 'center',
+            }}
+          >
+            <Typography variant="body2" color="textSecondary">
+              © 2025 Adopt a Plant
+            </Typography>
+          </Box>
         </Container>
-        <footer
-          style={{ marginTop: 'auto', padding: '10px 0', textAlign: 'center' }}
-        >
-          <Typography variant="body2" color="textSecondary">
-            © 2025 Adopt a Plant
-          </Typography>
-        </footer>
       </Router>
     </ThemeProvider>
   );

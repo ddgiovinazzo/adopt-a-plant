@@ -1,116 +1,149 @@
-import { Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/material';
-import { earthyOrange, darkerOrange, adoptedGreen, comingSoonBlack } from '../data/colors';
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+} from '@mui/material';
+import {
+  darkBrown,
+  softGreen,
+  softGrey,
+  white,
+  lightPink,
+  cutePink,
+  earthyBrown,
+} from '../data/colors';
+import { Link } from 'react-router-dom';
 
-type Product  =
-|
-{
-  image: string;
-  name: string;
-  description: string;
-  price: number;
-  comingSoon: true;
-  adopted?: false,
-}
-|
-{
-  image: string;
-  name: string;
-  description: string;
-  price: number;
-  adopted: true,
-  comingSoon?: false,
-}
-|{
-  image: string;
-  name: string;
-  description: string;
-  price: number;
-  comingSoon?: false;
-  adopted?: false,
-}
+type Product =
+  | {
+      id: string;
+      image: string;
+      name: string;
+      title: string;
+      description: string;
+      price: number;
+      comingSoon: true;
+      adopted?: false;
+    }
+  | {
+      id: string;
+      image: string;
+      name: string;
+      title: string;
+      description: string;
+      price: number;
+      adopted: true;
+      comingSoon?: false;
+    }
+  | {
+      id: string;
+      image: string;
+      name: string;
+      title: string;
+      description: string;
+      price: number;
+      comingSoon?: false;
+      adopted?: false;
+    };
 
 interface ProductCardProps {
   product: Product;
 }
-const ProductCard: React.FC<ProductCardProps> = ({ product })=> {
+
+export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Card style={{ position: 'relative', height: '370px', display: 'flex', flexDirection: 'column' }}>
+    <Card sx={{ position: 'relative', height: '370px', display: 'flex', flexDirection: 'column' }}>
       <CardMedia
         component="img"
-        style={{ height: '140px', width: '140px', objectFit: 'cover', margin: '20px auto 0' }} // Added top padding
         image={product.image}
-        alt={product.name}
+        sx={{ height: '140px', width: '140px', objectFit: 'cover', margin: '20px auto 0' }}
       />
-      <CardContent style={{ flex: '1 1 auto', display: 'flex', flexDirection: 'column' }}>
-        <Typography gutterBottom variant="h5" component="div">
+      <CardContent sx={{ flex: '1 1 auto', display: 'flex', flexDirection: 'column' }}>
+        <Typography gutterBottom variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', marginBottom: '10px' }}>
           {product.name}
         </Typography>
-        <Typography variant="body2" color="textSecondary" sx={{ marginBottom: '10px' }}>
-          {product.description}
+        <Typography variant="h6" textAlign="center" color="textSecondary" sx={{ marginBottom: '10px' }}>
+          "{product.title}"
         </Typography>
         <Box sx={{ marginTop: 'auto' }}>
-          <Typography
-            variant="body2"
-            color="textPrimary"
-            sx={{
-              marginBottom: '10px',
-              fontSize: '1.2rem',
-              color: '#ff69b4', // Cute pink color
-              padding: '5px',
-              borderRadius: '4px',
-              backgroundColor: '#fff0f5', // Light pink background
-              textAlign: 'center',
-            }}
-          >
-            ${product.price}
-          </Typography>
           {product.comingSoon ? (
-            <Box
+            <Typography
+              variant="body2"
               sx={{
-                width: '100%',
-                backgroundColor: comingSoonBlack,
-                color: 'white',
-                textAlign: 'center',
-                padding: '10px 0',
+                marginBottom: '10px',
+                fontSize: '1.2rem',
+                color: darkBrown,
+                padding: '5px',
                 borderRadius: '4px',
+                textAlign: 'center',
+                opacity: 0.8,
+                backgroundColor: softGrey,
+                marginLeft: '-20px',
+                marginRight: '-20px',
               }}
             >
               Coming Soon!
-            </Box>
+            </Typography>
           ) : product.adopted ? (
-            <Box
+            <Typography
+              variant="body2"
               sx={{
-                width: '100%',
-                backgroundColor: adoptedGreen,
-                color: 'white',
-                textAlign: 'center',
-                padding: '10px 0',
+                marginBottom: '10px',
+                fontSize: '1.2rem',
+                color: darkBrown,
+                padding: '5px',
                 borderRadius: '4px',
+                textAlign: 'center',
+                opacity: 0.8,
+                backgroundColor: softGreen,
+                marginLeft: '-20px',
+                marginRight: '-20px',
               }}
             >
               Adopted!
-            </Box>
+            </Typography>
           ) : (
-            <Button
-              variant="contained"
+            <Typography
+              variant="body2"
               sx={{
-                width: '100%',
-                textAlign: 'center',
-                padding: '10px 0',
+                marginBottom: '10px',
+                fontSize: '1.2rem',
+                color: darkBrown, // Darker color for better readability
+                padding: '5px',
                 borderRadius: '4px',
-                backgroundColor: earthyOrange,
-                '&:hover': {
-                  backgroundColor: darkerOrange,
-                },
+                backgroundColor: lightPink,
+                textAlign: 'center',
+                marginLeft: '-20px',
+                marginRight: '-20px',
               }}
             >
-              Add to Cart
-            </Button>
+              ${product.price}
+            </Typography>
           )}
+          <Button
+            component={Link}
+            to={`/product/${product.id}`}
+            sx={{
+              width: '100%',
+              textAlign: 'center',
+              padding: '10px 0',
+              borderRadius: '4px',
+              backgroundColor: earthyBrown,
+              color: white,
+              textDecoration: 'none',
+              display: 'block',
+              '&:hover': {
+                backgroundColor: darkBrown,
+              },
+            }}
+          >
+            More Info
+          </Button>
         </Box>
       </CardContent>
     </Card>
   );
-}
-
-export default ProductCard;
+};

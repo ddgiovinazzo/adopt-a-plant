@@ -11,43 +11,49 @@ import sneaky from '../assets/sneaky.svg';
 import spidey from '../assets/spidey.svg';
 import vera from '../assets/vera.svg';
 
-const products = [
+export const products = [
   {
     id: '1',
     name: 'Fiddle Leaf Figgy',
+    title: 'The Social Butterfly',
     description:
-      'A beautiful and popular houseplant with large, glossy leaves.',
+      'Meet Figgy, the social butterfly of the plant world! Figgy loves bright, indirect light and enjoys being the center of attention. Just make sure to keep the soil moist but not soggy, and Figgy will reward you with stunning, large leaves. Figgy dislikes drafts and being moved around too much.',
     price: 45.0,
     image: figgy,
   },
   {
     id: '2',
     name: 'Sneaky Snake Plant',
+    title: 'The Low-Maintenance Wonder',
     description:
-      'An easy-to-care-for plant that thrives in low light conditions.',
+      "Sneaky is the ultimate low-maintenance companion. This plant thrives in low light and can go weeks without water, making it a perfect choice for busy plant parents. Sneaky loves to chill in a corner and purify the air. Just don't overwater, as Sneaky dislikes soggy soil.",
     price: 25.0,
     image: sneaky,
   },
   {
     id: '3',
     name: 'Monsta Monstera',
-    description: 'A trendy plant known for its unique, split leaves.',
+    title: "The Rockstar",
+    description:
+      'Monsta is the rockstar of the plant world with its iconic split leaves. Monsta loves bright, indirect light and a bit of humidity. Water when the top inch of soil is dry, and Monsta will keep rocking. Monsta dislikes direct sunlight and dry air.',
     price: 55.0,
     image: monster,
   },
   {
     id: '4',
     name: 'Pothos the Brave',
+    title: "The Adventurer",
     description:
-      'A versatile and hardy plant that can grow in a variety of conditions.',
+      'Pothos is the adventurer, ready to thrive in almost any condition. This plant loves bright, indirect light but can also handle low light. Water when the top inch of soil is dry, and Pothos will keep growing. Pothos dislikes overwatering and being left in the dark for too long.',
     price: 20.0,
     image: pothos,
   },
   {
     id: '5',
     name: 'Cactus McThorny',
+    title: 'The Tough Cookie',
     description:
-      'A resilient plant that can survive in the harshest conditions.',
+      'McThorny is one tough cookie, thriving in bright light and minimal water. This cactus loves to soak up the sun and can go weeks without a drink. Just give McThorny a sunny spot and watch it thrive. McThorny dislikes overwatering and cold temperatures.',
     price: 30.0,
     image: mcthorny,
     adopted: true,
@@ -55,30 +61,36 @@ const products = [
   {
     id: '6',
     name: 'Fernie Fern',
+    title: 'The Delicate Beauty',
     description:
-      'A lush and delicate plant that adds a touch of green to any space.',
+      'Fernie is the delicate beauty, loving humidity and indirect light. Keep the soil consistently moist, and Fernie will flourish. Fernie enjoys misting and a bit of pampering. Fernie dislikes dry air and direct sunlight.',
     price: 35.0,
     image: fernie,
   },
   {
     id: '7',
     name: 'Bamboo Boo',
+    title: 'The Tropical Speedster',
     description:
-      'A fast-growing plant that brings a touch of the tropics to your home.',
+      'Boo is the tropical speedster, growing quickly in bright, indirect light. Keep the soil moist, and Boo will keep reaching for the sky. Boo loves a bit of humidity and a cozy spot. Boo dislikes dry soil and cold drafts.',
     price: 40.0,
     image: boo,
   },
   {
     id: '8',
     name: 'Aloe Vera Vera',
-    description: 'A succulent plant known for its medicinal properties.',
+    title: 'The Healer',
+    description:
+      'Vera is the healer, known for its soothing gel. This succulent loves bright light and minimal water. Let the soil dry out completely between waterings, and Vera will stay happy. Vera dislikes overwatering and low light conditions.',
     price: 15.0,
     image: vera,
   },
   {
     id: '9',
     name: 'Peace Lily Lila',
-    description: 'A beautiful plant with white blooms that purify the air.',
+    title: 'The Serene Beauty',
+    description:
+      'Lila is the serene beauty, known for its air-purifying qualities. Lila loves low to medium light and consistently moist soil. Keep Lila in a peaceful spot, and it will reward you with beautiful white blooms. Lila dislikes direct sunlight and dry soil.',
     price: 25.0,
     image: lila,
     adopted: true,
@@ -86,8 +98,9 @@ const products = [
   {
     id: '10',
     name: 'Spider Plant Spidey',
+    title: 'The Easy-Going Friend',
     description:
-      'A popular houseplant known for its long, arching leaves and easy care.',
+      'Spidey is an easy-going friend, thriving in bright, indirect light. Water when the soil is dry, and Spidey will keep producing baby spiderette plants. Spidey loves a bit of humidity and a cozy spot. Spidey dislikes overwatering and direct sunlight.',
     price: 20.0,
     image: spidey,
     adopted: true,
@@ -95,8 +108,9 @@ const products = [
   {
     id: '11',
     name: 'Succulent Sally',
+    title: 'The Charming Minimalist',
     description:
-      'A charming succulent that requires minimal care and adds a touch of green to any space.',
+      'Sally is the charming minimalist, loving bright light and minimal water. Let the soil dry out completely between waterings, and Sally will stay happy. Sally enjoys a sunny spot and a bit of neglect. Sally dislikes overwatering and low light conditions.',
     price: 10.0,
     image: sally,
     comingSoon: true,
@@ -104,12 +118,11 @@ const products = [
   {
     id: '12',
     name: 'Orchid Ophelia',
+    title: 'The Elegant Diva',
     description:
-      'An elegant orchid with stunning blooms that bring a touch of luxury to your home.',
+      'Ophelia is the elegant diva, loving bright, indirect light and a bit of humidity. Water when the top inch of soil is dry, and Ophelia will keep blooming. Ophelia enjoys a bit of pampering and a cozy spot. Ophelia dislikes direct sunlight and dry air.',
     price: 50.0,
     image: ophelia,
     comingSoon: true,
   },
 ];
-
-export default products;
