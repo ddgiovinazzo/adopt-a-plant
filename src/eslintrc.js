@@ -35,6 +35,7 @@ module.exports = {
     'react/prop-types': 'off',
     'prettier/prettier': 'error',
     'import/no-unresolved': 'error',
+    'import/no-default-export': 'warn',
     'import/extensions': [
       'error',
       'ignorePackages',

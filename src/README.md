@@ -59,6 +59,7 @@ To get a local copy up and running, follow these steps:
 ### Running Tests
 
 To run tests, use the following script:
+
 ```sh
 npm test
 ```
@@ -66,6 +67,7 @@ npm test
 ### Linting
 
 To lint the code, use the following script:
+
 ```sh
 npm run lint
 ```
@@ -73,7 +75,7 @@ npm run lint
 ### Deployment
 
 To deploy the app to GitHub Pages, use the following script:
+
 ```sh
 npm run deploy
 ```
-
