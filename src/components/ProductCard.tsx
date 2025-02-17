@@ -12,7 +12,6 @@ import {
   softGrey,
   white,
   lightPink,
-  cutePink,
   earthyBrown,
 } from '../data/colors';
 import { Link } from 'react-router-dom';
