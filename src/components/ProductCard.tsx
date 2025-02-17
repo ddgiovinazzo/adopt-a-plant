@@ -1,8 +1,38 @@
-import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/material';
 import { earthyOrange, darkerOrange, adoptedGreen, comingSoonBlack } from '../data/colors';
 
-function ProductCard({ product }) {
+type Product  =
+|
+{
+  image: string;
+  name: string;
+  description: string;
+  price: number;
+  comingSoon: true;
+  adopted?: false,
+}
+|
+{
+  image: string;
+  name: string;
+  description: string;
+  price: number;
+  adopted: true,
+  comingSoon?: false,
+}
+|{
+  image: string;
+  name: string;
+  description: string;
+  price: number;
+  comingSoon?: false;
+  adopted?: false,
+}
+
+interface ProductCardProps {
+  product: Product;
+}
+const ProductCard: React.FC<ProductCardProps> = ({ product })=> {
   return (
     <Card style={{ position: 'relative', height: '370px', display: 'flex', flexDirection: 'column' }}>
       <CardMedia
