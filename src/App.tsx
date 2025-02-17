@@ -12,23 +12,23 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import logo from './assets/logo.svg';
 import { ProductCard } from './components/ProductCard';
 import { ProductView } from './components/ProductView';
-import { beige, darkBrown, earthyBrown, softGreen, white } from './data/colors';
+import { BROWN2, BROWN4, BROWN3, GREEN2, WHITE } from './data/colors';
 import { products } from './data/products';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: earthyBrown, // Earthy brown
+      main: BROWN3, // Earthy brown
     },
     secondary: {
-      main: softGreen, // Soft green
+      main: GREEN2, // Soft green
     },
     background: {
-      default: beige, // Beige
+      default: BROWN2, // Beige
     },
     text: {
-      primary: darkBrown, // Dark brown
-      secondary: earthyBrown, // Earthy brown
+      primary: BROWN4, // Dark brown
+      secondary: BROWN3, // Earthy brown
     },
   },
   typography: {
@@ -68,10 +68,10 @@ const App: React.FC = () => {
                   <Box
                     sx={{
                       padding: '20px',
-                      backgroundColor: white,
+                      backgroundColor: WHITE,
                       borderRadius: '4px',
                       marginBottom: '20px',
-                      color: '#3e2723',
+                      color: BROWN4,
                       fontSize: '1rem',
                     }}
                   >

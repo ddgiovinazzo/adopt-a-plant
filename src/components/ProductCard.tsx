@@ -7,12 +7,12 @@ import {
   Typography,
 } from '@mui/material';
 import {
-  darkBrown,
-  softGreen,
-  softGrey,
-  white,
-  lightPink,
-  earthyBrown,
+  BROWN4,
+  GREEN2,
+  GREY1,
+  WHITE,
+  PINK1,
+  BROWN3,
 } from '../data/colors';
 import { Link } from 'react-router-dom';
 
@@ -77,12 +77,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               sx={{
                 marginBottom: '10px',
                 fontSize: '1.2rem',
-                color: darkBrown,
+                color: BROWN4,
                 padding: '5px',
                 borderRadius: '4px',
                 textAlign: 'center',
                 opacity: 0.8,
-                backgroundColor: softGrey,
+                backgroundColor: GREY1,
                 marginLeft: '-20px',
                 marginRight: '-20px',
               }}
@@ -95,12 +95,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               sx={{
                 marginBottom: '10px',
                 fontSize: '1.2rem',
-                color: darkBrown,
+                color: BROWN4,
                 padding: '5px',
                 borderRadius: '4px',
                 textAlign: 'center',
                 opacity: 0.8,
-                backgroundColor: softGreen,
+                backgroundColor: GREEN2,
                 marginLeft: '-20px',
                 marginRight: '-20px',
               }}
@@ -113,10 +113,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               sx={{
                 marginBottom: '10px',
                 fontSize: '1.2rem',
-                color: darkBrown, // Darker color for better readability
+                color: BROWN4, // Darker color for better readability
                 padding: '5px',
                 borderRadius: '4px',
-                backgroundColor: lightPink,
+                backgroundColor: PINK1,
                 textAlign: 'center',
                 marginLeft: '-20px',
                 marginRight: '-20px',
@@ -133,12 +133,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               textAlign: 'center',
               padding: '10px 0',
               borderRadius: '4px',
-              backgroundColor: earthyBrown,
-              color: white,
+              backgroundColor: BROWN3,
+              color: WHITE,
               textDecoration: 'none',
               display: 'block',
               '&:hover': {
-                backgroundColor: darkBrown,
+                backgroundColor: BROWN4,
               },
             }}
           >

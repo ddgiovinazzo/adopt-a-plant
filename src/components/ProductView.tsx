@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Paper } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { products } from '../data/products';
-import { lightPink, lightMint, white } from '../data/colors';
+import { PINK1, BROWN1, WHITE} from '../data/colors';
 
 export const ProductView: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -13,7 +13,7 @@ export const ProductView: React.FC = () => {
 
   return (
     <Container maxWidth="md" sx={{ marginTop: '20px' }}>
-      <Paper elevation={3} sx={{ padding: '20px', backgroundColor: white, borderRadius: '8px' }}>
+      <Paper elevation={3} sx={{ padding: '20px', backgroundColor: WHITE, borderRadius: '8px' }}>
         <Typography variant="h4" component="h1" gutterBottom>
           {product.name}
         </Typography>
@@ -24,7 +24,7 @@ export const ProductView: React.FC = () => {
             minWidth: '200px',
             minHeight: '200px',
             borderRadius: '50%',
-            border: `5px dashed ${lightPink}`, // Cute dashed pink border
+            border: `5px dashed ${PINK1}`, // Cute dashed pink border
             padding: '20px',
             marginBottom: '20px',
             display: 'flex',
@@ -32,7 +32,7 @@ export const ProductView: React.FC = () => {
             alignItems: 'center',
             marginLeft: 'auto',
             marginRight: 'auto',
-            backgroundColor: lightMint,
+            backgroundColor: BROWN1,
           }}
         >
           <Box
