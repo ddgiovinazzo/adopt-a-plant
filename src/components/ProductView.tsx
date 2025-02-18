@@ -27,9 +27,6 @@ export const ProductView: React.FC = () => {
             border: `5px dashed ${PINK1}`, // Cute dashed pink border
             padding: '20px',
             marginBottom: '20px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
             marginLeft: 'auto',
             marginRight: 'auto',
             backgroundColor: BROWN1,
@@ -50,12 +47,6 @@ export const ProductView: React.FC = () => {
           gutterBottom
           component={'p'}
           align="justify"
-          sx={{
-            fontSize: '1.2rem',
-            lineHeight: '1.6',
-            marginBottom: '20px',
-            padding: '0 20px',
-          }}
         >
           {product.description}
         </Typography>

@@ -8,10 +8,7 @@ import {
 } from '@mui/material';
 import {
   BROWN4,
-  GREEN2,
-  GREY1,
   WHITE,
-  PINK1,
   BROWN3,
   DIFFICULTY_EASY,
   DIFFICULTY_MODERATE,
@@ -20,6 +17,7 @@ import {
   BROWN1,
 } from '../data/colors';
 import { Link } from 'react-router-dom';
+import StatusBanner from './StatusBanner';
 
 export enum Difficulty {
   Easy = 'easy',
@@ -101,60 +99,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           "{product.title}"
         </Typography>
         <Box sx={{ marginTop: 'auto' }}>
-          {product.comingSoon ? (
-            <Typography
-              variant="body2"
-              sx={{
-                marginBottom: '10px',
-                fontSize: '1.2rem',
-                color: BROWN4,
-                padding: '5px',
-                borderRadius: '4px',
-                textAlign: 'center',
-                opacity: 0.8,
-                backgroundColor: GREY1,
-                marginLeft: '-20px',
-                marginRight: '-20px',
-              }}
-            >
-              Coming Soon!
-            </Typography>
-          ) : product.adopted ? (
-            <Typography
-              variant="body2"
-              sx={{
-                marginBottom: '10px',
-                fontSize: '1.2rem',
-                color: BROWN4,
-                padding: '5px',
-                borderRadius: '4px',
-                textAlign: 'center',
-                opacity: 0.8,
-                backgroundColor: GREEN2,
-                marginLeft: '-20px',
-                marginRight: '-20px',
-              }}
-            >
-              Adopted!
-            </Typography>
-          ) : (
-            <Typography
-              variant="body2"
-              sx={{
-                marginBottom: '10px',
-                fontSize: '1.2rem',
-                color: BROWN4, // Darker color for better readability
-                padding: '5px',
-                borderRadius: '4px',
-                backgroundColor: PINK1,
-                textAlign: 'center',
-                marginLeft: '-20px',
-                marginRight: '-20px',
-              }}
-            >
-              Available!
-            </Typography>
-          )}
+          <StatusBanner product={product} />
           <Button
             component={Link}
             to={`/product/${product.id}`}
